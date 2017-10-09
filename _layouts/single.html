@@ -4,8 +4,6 @@ layout: default
 
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
   {% include page__hero.html %}
-{% elsif page.header.video.id and page.header.video.provider %}
-  {% include page__hero_video.html %}
 {% endif %}
 
 {% if page.url != "/" and site.breadcrumbs %}
@@ -14,71 +12,243 @@ layout: default
   {% endunless %}
 {% endif %}
 
-<div id="main" role="main">
-  {% include sidebar.html %}
+  <div class="page__inner-wrap">
+      {% unless page.header.overlay_color or page.header.overlay_image %}
+          <div id="figure">
+            <img src="{{page.image}}"/>
+            {% if page.title %}
+            <div id="figcaption">
+              <div id="box">
+              <h1> {{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>
+              </div>
+            </div>
+            {% endif %}
+          </div>
+  </div>
 
+<div id="popofcolor">
+  <style type="text/css">
+  #popofcolor { background-color: {{ page.accent }}; height: 15px; width: 100%;}
+  </style>
+  </div>
+
+  
+<div id="main" role="main">
+  <style type="text/css">
+  </style>
+</div>
+          
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once | margin-top: 200px }}">{% endif %}
     {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}">{% endif %}
-    {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date: "%B %d, %Y" }}">{% endif %}
+    {% if page.modified %}<meta itemprop="dateModified" content="{{ page.modified | date: "%B %d, %Y" }}">{% endif %}
 
-    <div class="page__inner-wrap">
-      {% unless page.header.overlay_color or page.header.overlay_image %}
-        <header>
-          {% if page.title %}<h1 class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
-          {% if page.read_time %}
-            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
-          {% endif %}
-        </header>
+    
+    <div id="margincontainer">
+  
       {% endunless %}
+      <div id= "spacer"> </div>
+      {{ page.description}}
+      <div id="spacer"> </div>
+      
+      <div id= "recipedetails">
+      <div id= "time"> Time </div>
+      <div id= "serves"> Serves </div>
+      </div>
 
+      <div id= "recipenumbers">
+      <div id= "time"><h3> {{ page.time }} </h3> </div>
+      <div id= "serves"><h3> {{ page.serves }} </h3> </div>
+      </div>
+
+      
+      </div>
+      
+      <div id= "ingredienthdr">
+      <h1>Ingredients</h1>
+      </div>
+        {{page.ingredient1}}
+        {{page.ingredient2}}
+        {{page.ingredient3}}
+        {{page.ingredient4}}
+        {{page.ingredient5}}
+        {{page.ingredient6}}
+        {{page.ingredient7}}
+        {{page.ingredient8}}
+        {{page.ingredient9}}
+        {{page.ingredient10}}
+        {{page.ingredient11}}
+        {{page.ingredient12}}
+        {{page.ingredient13}}
+        {{page.ingredient14}}
+        {{page.ingredient15}}
+        {{page.ingredient16}}
+        {{page.ingredient17}}
+        {{page.ingredient18}}
+        {{page.ingredient19}}
+        {{page.ingredient20}}
+      
+        <div id="spacer"> </div>
+      
+        <div id="preparation">
+        <h1>Preparation</h1>
+        </div>
+    
+        <div id="instruction">
+        <div id="image1">{{page.image1}} </div>
+        <div id="step1">{{page.step1}}</div>
+        </div>  
+         
+        <div id="instruction">
+        <div id="image2">{{page.image2}} </div>
+        <div id="step2">{{page.step2}}</div>
+        </div>
+        
+        <div id="instruction">
+        <div id="image3">{{page.image3}} </div>
+        <div id="step3">{{page.step3}}</div>
+        </div> 
+         
+        <div id="instruction">
+        <div id="image4">{{page.image4}} </div>
+        <div id="step4">{{page.step4}}</div>
+        </div>
+        
+        <div id="instruction">
+        <div id="image5">{{page.image5}} </div>
+        <div id="step5">{{page.step5}}</div>
+        </div>
+          
+        <div id="instruction">
+        <div id="image6">{{page.image6}} </div>
+        <div id="step6">{{page.step6}}</div>
+        </div>
+        
+        <div id="instruction">
+        <div id="image7">{{page.image7}} </div>
+        <div id="step7">{{page.step7}}</div>
+        </div>
+          
+        <div id="instruction">
+        <div id="image8">{{page.image8}} </div>
+        <div id="step8">{{page.step8}}</div>
+        </div>
+         
+        <div id="instruction">
+        <div id="image9">{{page.image9}} </div>
+        <div id="step9">{{page.step9}}</div>
+        </div>
+          
+        <div id="instruction">
+        <div id="image10">{{page.image10}} </div>
+        <div id="step10">{{page.step10}}</div>
+        </div>
+          
+        <div id="instruction">
+        <div id="image11">{{page.image11}} </div>
+        <div id="step11">{{page.step11}}</div>
+        </div>
+          
+        <div id="instruction">
+        <div id="image12">{{page.image12}} </div>
+        <div id="step12">{{page.step12}}</div>
+        </div>
+    
+        <div id="instruction">
+        <div id="image13">{{page.image13}} </div>
+        <div id="step13">{{page.step13}}</div>
+        </div>
+        
+        <div id="instruction">
+        <div id="image14">{{page.image14}} </div>
+        <div id="step14">{{page.step14}}</div>
+        </div>
+        
+        <div id="instruction">
+        <div id="image15">{{page.image15}} </div>
+        <div id="step15">{{page.step15}}</div>
+        </div>
+          
+        <div id="instruction">
+        <div id="image16">{{page.image16}} </div>
+        <div id="step16">{{page.step16}}</div>
+        </div>
+          
+        <div id="instruction">
+        <div id="image17">{{page.image17}} </div>
+        <div id="step17">{{page.step17}}</div>
+        </div>
+    
       <section class="page__content" itemprop="text">
         {{ content }}
-        {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
+        {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
+    
 
       <footer class="page__meta">
         {% if site.data.ui-text[site.locale].meta_label %}
           <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
         {% endif %}
         {% include page__taxonomy.html %}
-        {% if page.last_modified_at %}
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Updated:" }}</strong> <time datetime="{{ page.last_modified_at | date: "%Y-%m-%d" }}">{{ page.last_modified_at | date: "%B %d, %Y" }}</time></p>
+        {% if page.modified %}
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Updated:" }}</strong> <time datetime="{{ page.modified | date: "%Y-%m-%d" }}">{{ page.modified | date: "%B %d, %Y" }}</time></p>
         {% elsif page.date %}
           <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Updated:" }}</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time></p>
         {% endif %}
       </footer>
-
       {% if page.share %}{% include social-share.html %}{% endif %}
-
       {% include post_pagination.html %}
-    </div>
 
+    <div id="comments">
     {% if site.comments.provider and page.comments %}
       {% include comments.html %}
     {% endif %}
-  </article>
+    </div>
+    
+    <div id="spacer"></div>
 
-  {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
+  {% if page.related %}
+    {% assign n_posts = 0 %}
+    {% for post in site.posts %}
+      {% if post.id == page.id %}{% continue %}{% endif %}
+      {% for this_tag in page.tags %}
+          {% if post.tags contains this_tag %}
+            {% if n_posts == 0 %}
+              <div class="page__related">
+                {% if site.data.ui-text[site.locale].related_label %}
+                  <h2 class="page__related-title"> {{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy" }}</h2>
+                {% endif %}
+                <div class="grid__wrapper">
+            {% endif %}
+            {% include archive-single.html type="grid" %}
+            {% assign n_posts = n_posts | plus: 1 %}
+            {% break %}
+          {% endif %}
+      {% endfor %}
+      {% if n_posts > 4 %}{% break %}{% endif %}
+    {% endfor %}
+    {% if n_posts > 0 %}
+        </div>
+      </div>
+    {% endif %}
+  {% endif %}
+
+</article>
+    </div>
+
+<!-- 
+  {% comment %}{% endcomment %}
   {% if page.id and page.related and site.related_posts.size > 0 %}
     <div class="page__related">
-      <h4 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy" }}</h4>
+      {% if site.data.ui-text[site.locale].related_label %}
+        <h4 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy" }}</h4>
+      {% endif %}
       <div class="grid__wrapper">
         {% for post in site.related_posts limit:4 %}
           {% include archive-single.html type="grid" %}
         {% endfor %}
       </div>
     </div>
-  {% comment %}<!-- otherwise show recent posts if no related when `related: true` -->{% endcomment %}
-  {% elsif page.id and page.related %}
-    <div class="page__related">
-      <h4 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy" }}</h4>
-      <div class="grid__wrapper">
-        {% for post in site.posts limit:4 %}
-          {% include archive-single.html type="grid" %}
-        {% endfor %}
-      </div>
-    </div>
   {% endif %}
-</div>
+</div> -->

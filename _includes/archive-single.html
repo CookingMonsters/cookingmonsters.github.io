@@ -10,6 +10,8 @@
   {% assign title = post.title %}
 {% endif %}
 
+
+<div class= "gridarchive">
 <div class="{{ include.type | default: "list" }}__item">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
     {% if include.type == "grid" and teaser %}
@@ -23,16 +25,25 @@
           alt="">
       </div>
     {% endif %}
-    <h2 class="archive__item-title" itemprop="headline">
-      {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | absolute_url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-      {% else %}
-        <a href="{{ post.url | absolute_url }}" rel="permalink">{{ title }}</a>
-      {% endif %}
-    </h2>
-    {% if post.read_time %}
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
-    {% endif %}
-    {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
+    <h1 class="archive__item-title" itemprop="headline">
+      <div class="posttitlearchive">
+        <a href="{{ post.url | absolute_url }}" rel="permalink">
+          {% if post.video %}
+            <video width="100%" autoplay loop muted class="banner__video" poster="{{post.thumbnail}}">
+              <source src="{{post.video}}" type="video/mp4">
+            </video>
+            {% elsif post.thumbnail %}
+            <img src="{{post.thumbnail}}"/>
+            {% endif %}
+        </a>
+      </div>
+      <div class="posttitle">
+        {{ title }}
+      </div>
+      <div class="posttaglist">   
+        {% include tag-list-archive.html %}
+      </div>
+    </h1>
   </article>
+</div>
 </div>
