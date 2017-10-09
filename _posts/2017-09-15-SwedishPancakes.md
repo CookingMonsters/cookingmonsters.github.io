@@ -20,5 +20,5 @@ ingredient5: <div style="text-align:right;width:10%;display:inline-block;"></div
 ingredient6: <div style="text-align:right;width:10%;display:inline-block;"></div><div style="text-align:right;width:3%;display:inline-block;"></div><div style="text-align:left;width:80%;display:inline-block;">oil for the pan</div> 
 
 
-tags: [american, hawaiian, fish, salmon]
+tags: [swedish, breakfast, dessert, aquafaba]
 ---
